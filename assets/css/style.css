@@ -49,6 +49,61 @@ a {
   font-size: 1em;
   padding: 0.5em 1em;
 }
+
+#site-main .container form {
+  margin: 2em 0;
+}
+
+table {
+  border-spacing: 0px;
+  width: 100%;
+  color: white;
+}
+
+.table td,
+.table th {
+  padding: 0.75em;
+  vertical-align: top;
+  text-align: center;
+  border-top: 1px solid #514869;
+}
+
+.table td > a.btn {
+  padding: 0.3em 1em;
+  font: 1.1em;
+  margin: 0.1em;
+}
+
+.table tr:hover {
+  background-color: #00ff8096;
+  box-shadow: 0px 10px 40px -12px #00ff8052;
+  transition: 0.3s all;
+  color: #1d182b;
+}
+
+.table tr:hover .gradient {
+  background: linear-gradient(to right, #331f6b, #1d182b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.table tr:hover td > a {
+  box-shadow: none;
+}
+
+.table .thead th {
+  background-color: white;
+  color: #1d182b;
+}
+
+.gradient {
+  background: linear-gradient(to right, #00ff88, #1ca364);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .main {
   width: 100vw;
   height: 100vh;
