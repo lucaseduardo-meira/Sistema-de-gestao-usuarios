@@ -3,12 +3,52 @@
 body {
   margin: 0;
   font-family: "Noto Sans", sans-serif;
+  background: #1d182b;
 }
 
 body * {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.nav-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.user-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#header nav {
+  background-color: #00ff88;
+  padding: 1em 0;
+  width: 100%;
+  color: #2b134b;
+}
+
+#site-main {
+  margin-top: 6em;
+}
+
+#site-main .container .user-block > a {
+  font-size: 1em;
+  padding: 0.5em 1em;
+}
 .main {
   width: 100vw;
   height: 100vh;
