@@ -216,6 +216,31 @@ table {
   .card-login {
     width: 85%;
   }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    color: white;
+    border: 1px solid;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid white;
+    position: relative;
+  }
 }
 
 @media only screen and (max-width: 600px) {
