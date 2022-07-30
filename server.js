@@ -3,17 +3,21 @@ const ejs = require("ejs");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const path = require("path");
-const { triggerAsyncId } = require("async_hooks");
+
+const connectDB = require("./server/database/connection");
 
 // Express config
 const app = express();
 
-// Poth config
+// Path config
 dotenv.config({ path: "config.env" });
 const PORT = process.env.PORT || 8080;
 
 // log request
 app.use(morgan("tiny"));
+
+//MongoDB connection
+connectDB();
 
 // parse request
 app.use(express.urlencoded({ extended: true }));
