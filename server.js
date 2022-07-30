@@ -30,6 +30,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/add-user", (req, res) => {
+  res.render("add_user");
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
 });
