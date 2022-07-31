@@ -5,11 +5,11 @@ var schema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  password: {
-    type: String,
-    required: true,
-    select: false,
-  },
+  // password: {
+  //   type: String,
+  //   required: true,
+  //   select: false,
+  // },
   name: {
     type: String,
     require: true,
