@@ -5,11 +5,11 @@ const services = require("../services/render");
 const controller = require("../controller/controller");
 
 /**
- * @description Home page
+ * @description login page
  * @method GET /
  */
 
-route.get("/", services.homeRoutes);
+route.get("/", services.login);
 
 /**
  * @description add users
