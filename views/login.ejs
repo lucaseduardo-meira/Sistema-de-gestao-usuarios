@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="../assets/js/login.js"></script>
     <title>Login</title>
 </head>
 
@@ -16,21 +15,23 @@
             <h1>Bem vindo<br>Faça o seu login</h1>
             <img src="img/office.svg" alt="Escritorio" class="left-login-image">
         </div>
-        <div class="right-login">
-            <div class="card-login">
-                <h1>LOGIN</h1>
-                <div class="textfield">
-                    <label for="user">Usuário</label>
-                    <input type="text" name="user" placeholder="Usuário">
+        <form method="post">
+            <div class="right-login">
+                <div class="card-login">
+                    <h1>LOGIN</h1>
+                    <div class="textfield">
+                        <label for="name">Usuário</label>
+                        <input type="text" name="name" placeholder="Usuário">
+                    </div>
+                    <div class="textfield">
+                        <label for="password">Senha</label>
+                        <input type="password" name="password" placeholder="Senha">
+                    </div>
+                    <button type="submit" class="btn-login">Login</button>
                 </div>
-                <div class="textfield">
-                    <label for="password">Senha</label>
-                    <input type="password" name="password" placeholder="Senha">
-                </div>
-                <button id="post-btn" class="btn-login">Login</button>
-
             </div>
-        </div>
+        </form>
+
     </div>
 </body>
 

@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const path = require("path");
 
 const connectDB = require("./server/connection/connection");
+require("./server/database/index");
 
 // Express config
 const app = express();
@@ -30,6 +31,7 @@ app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
 app.use("/img", express.static(path.resolve(__dirname, "assets/img")));
 app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
 
+app.use(express.json());
 app.use("/", require("./server/routes/router"));
 
 app.listen(PORT, () => {

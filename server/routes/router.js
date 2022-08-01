@@ -16,6 +16,8 @@ route.get("/", services.login);
  * @method GET /add-users
  */
 
+route.post("/", controller.store);
+
 route.get("/add-user", services.add_user);
 /**
  * @description update users

@@ -8,7 +8,7 @@ class User extends Model {
         password: DataTypes.STRING,
       },
       {
-        sequelize: connection,
+        sequelize,
       }
     );
   }
