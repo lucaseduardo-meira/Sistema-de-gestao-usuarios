@@ -16,8 +16,8 @@ const PORT = process.env.PORT || 8080;
 // log request
 app.use(morgan("tiny"));
 
-//MongoDB connection
-connectDB();
+//Sql connection
+//connectDB();
 
 // parse request
 app.use(express.urlencoded({ extended: true }));

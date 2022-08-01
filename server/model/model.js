@@ -1,28 +1,6 @@
-const mongoose = require("mongoose");
+const Sequelize = require("sequelize");
+const dbConfig = require("../database/connection");
 
-var schema = new mongoose.Schema({
-  username: {
-    type: String,
-    require: true,
-  },
-  // password: {
-  //   type: String,
-  //   required: true,
-  //   select: false,
-  // },
-  name: {
-    type: String,
-    require: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  gender: String,
-  status: String,
-});
+const connection = new Sequelize(dbConfig);
 
-const Userdb = mongoose.model("userdb", schema);
-
-module.exports = Userdb;
+module.exports = connection;
