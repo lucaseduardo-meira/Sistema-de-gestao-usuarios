@@ -2,7 +2,7 @@ const express = require("express");
 const route = express.Router();
 
 const services = require("../services/render");
-const UserController = require("../controller/controller");
+const UserController = require("../controller/UserController");
 
 /**
  * @description login page
