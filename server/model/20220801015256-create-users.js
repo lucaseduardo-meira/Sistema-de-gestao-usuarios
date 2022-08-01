@@ -3,8 +3,8 @@
 const sequelize = require("sequelize");
 
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("users", {
+  up(queryInterface, Sequelize) {
+    return queryInterface.createTable("users", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -30,12 +30,7 @@ module.exports = {
     });
   },
 
-  async down(queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+  down(queryInterface, Sequelize) {
+    return queryInterface.dropTable("users");
   },
 };
