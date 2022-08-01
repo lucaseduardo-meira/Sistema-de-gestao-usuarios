@@ -2,7 +2,7 @@ const express = require("express");
 const route = express.Router();
 
 const services = require("../services/render");
-const controller = require("../controller/controller");
+const UserController = require("../controller/controller");
 
 /**
  * @description login page
@@ -16,7 +16,7 @@ route.get("/", services.login);
  * @method GET /add-users
  */
 
-route.post("/", controller.store);
+route.post("/", UserController.store);
 
 route.get("/add-user", services.add_user);
 /**

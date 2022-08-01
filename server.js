@@ -4,8 +4,7 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const path = require("path");
 
-const connectDB = require("./server/connection/connection");
-require("./server/database/index");
+require("./server/database");
 
 // Express config
 const app = express();
@@ -16,9 +15,6 @@ const PORT = process.env.PORT || 8080;
 
 // log request
 app.use(morgan("tiny"));
-
-//Sql connection
-//connectDB();
 
 // parse request
 app.use(express.urlencoded({ extended: true }));

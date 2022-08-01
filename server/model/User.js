@@ -1,14 +1,14 @@
 const { Model, DataTypes } = require("sequelize");
 
 class User extends Model {
-  static init(sequelize) {
+  static init(connection) {
     super.init(
       {
         name: DataTypes.STRING,
         password: DataTypes.STRING,
       },
       {
-        sequelize,
+        sequelize: connection,
       }
     );
   }
