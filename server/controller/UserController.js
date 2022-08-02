@@ -40,6 +40,7 @@ module.exports = {
     } else {
       const user = await User.create({ name, password });
       req.session.login = name;
+      console.log(session.login);
       res.redirect("/");
     }
   },
