@@ -23,9 +23,24 @@ module.exports = {
     });
     if ((await find_user).length === 1) {
       req.session.login = name;
-      res.redirect("/");
+      res.render("index");
     } else {
       res.render("login");
+    }
+  },
+  async create(req, res) {
+    const { name, password } = req.body;
+    const find_name = User.findAll({
+      where: {
+        name: name,
+      },
+    });
+    if ((await find_name).length > 0) {
+      return console.log("Usuario já existe");
+    } else {
+      const user = await User.create({ name, password });
+      req.session.login = name;
+      res.redirect("/");
     }
   },
 };

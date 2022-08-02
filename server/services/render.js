@@ -1,7 +1,3 @@
-exports.login = (req, res) => {
-  res.render("login");
-};
-
 exports.home = (req, res) => {
   if (req.session.login) {
     res.render("index");
@@ -19,5 +15,9 @@ exports.update_user = (req, res) => {
 };
 
 exports.create_user = (req, res) => {
-  res.render("create_login");
+  if (req.session.login) {
+    res.redirect("/");
+  } else {
+    res.render("create_login");
+  }
 };

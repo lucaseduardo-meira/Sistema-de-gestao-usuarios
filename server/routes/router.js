@@ -35,7 +35,7 @@ route.get("/create_user", services.create_user);
  * @method POST /create_user
  */
 
-route.post("/create_user");
+route.post("/create_user", UserController.create);
 
 route.get("/add-user", services.add_user);
 /**
