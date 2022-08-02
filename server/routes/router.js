@@ -9,14 +9,14 @@ const UserController = require("../controller/UserController");
  * @method GET /
  */
 
-route.get("/", services.login);
+route.get("/login", services.login);
 
 /**
  * @description add users
  * @method GET /add-users
  */
 
-route.post("/", UserController.store);
+route.post("/login", UserController.store);
 
 route.get("/add-user", services.add_user);
 /**
