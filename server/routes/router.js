@@ -1,22 +1,41 @@
 const express = require("express");
 const route = express.Router();
 
+const login = require("../controller/UserController");
 const services = require("../services/render");
 const UserController = require("../controller/UserController");
 
+// /**
+//  * @description login page
+//  * @method GET /
+//  */
+
+// route.get("/login", services.login);
+
+// /**
+//  * @description login post
+//  * @method POST /login
+//  */
+
+// route.post("/login", UserController.login);
+
+// /**
+//  * @description create_user
+//  * @method GET /create_user
+//  */
+
+route.post("/", UserController.login);
+
+route.get("/", services.home);
+
+route.get("/create_user", services.create_user);
+
 /**
- * @description login page
- * @method GET /
+ * @description create_user
+ * @method POST /create_user
  */
 
-route.get("/login", services.login);
-
-/**
- * @description add users
- * @method GET /add-users
- */
-
-route.post("/login", UserController.store);
+route.post("/create_user");
 
 route.get("/add-user", services.add_user);
 /**

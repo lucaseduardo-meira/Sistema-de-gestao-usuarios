@@ -3,6 +3,7 @@ const ejs = require("ejs");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const path = require("path");
+const session = require("express-session");
 
 require("./server/database");
 
@@ -18,6 +19,7 @@ app.use(morgan("tiny"));
 
 // parse request
 app.use(express.urlencoded({ extended: true }));
+app.use(session({ secret: "uiodhfiuabfusuoga53da143108fboiad" }));
 
 // view engine
 app.set("view engine", "ejs");
