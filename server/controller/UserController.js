@@ -24,7 +24,6 @@ module.exports = {
     if ((await find_user).length === 1) {
       //LOGAR USER
       req.session.login = name;
-      console.log(req.session.login);
       res.render("index");
     } else {
       res.render("login");
