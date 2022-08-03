@@ -13,6 +13,7 @@ module.exports = {
         name: user,
       },
     });
+    console.log(user_id);
     if (!user_id) {
       return res.status(400).json({ error: "user not found" });
     }
