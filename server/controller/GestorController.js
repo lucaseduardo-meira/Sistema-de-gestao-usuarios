@@ -7,16 +7,18 @@ module.exports = {
     const user = req.session.login;
     const { name, email, gender, status } = req.body;
 
-    const user_id = await User.findAll({
+    const id = await User.findAll({
+      raw: true,
       attributes: ["id"],
       where: {
         name: user,
       },
     });
-    console.log(user_id);
-    if (!user_id) {
+    if (!id) {
       return res.status(400).json({ error: "user not found" });
     }
+
+    const user_id = id[0].id;
 
     const gestor = await Gestor.create({
       name,
@@ -26,6 +28,6 @@ module.exports = {
       user_id,
     });
 
-    return res.json(gestor);
+    res.redirect("/");
   },
 };
