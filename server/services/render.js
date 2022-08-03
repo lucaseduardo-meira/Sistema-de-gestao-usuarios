@@ -15,9 +15,12 @@ exports.create_user = (req, res) => {
   }
 };
 
-// C
+// Create user to database
 exports.add_user = (req, res) => {
-  res.render("add_user");
+  if (!req.body) {
+    res.status(400).send({ message: "Content can not be empty" });
+    return;
+  }
 };
 
 exports.update_user = (req, res) => {
