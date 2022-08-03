@@ -8,11 +8,16 @@ class Gestor extends Model {
         email: DataTypes.STRING,
         gender: DataTypes.STRING,
         status: DataTypes.STRING,
+        user_id: DataTypes.INTEGER,
       },
       {
         sequelize,
       }
     );
+  }
+
+  static associate(models) {
+    this.belongsTo(models.User, { foreignKey: "user_id", as: "manager" });
   }
 }
 
