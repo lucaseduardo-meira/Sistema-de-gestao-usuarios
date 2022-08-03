@@ -1,3 +1,5 @@
+const User = require("../model/User");
+
 // Login e home page
 exports.home = (req, res) => {
   if (req.session.login) {
