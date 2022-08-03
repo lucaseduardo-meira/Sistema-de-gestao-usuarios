@@ -1,5 +1,3 @@
-const User = require("../model/User");
-
 // Login e home page
 exports.home = (req, res) => {
   if (req.session.login) {
@@ -18,12 +16,7 @@ exports.create_user = (req, res) => {
 };
 
 // Create user to database
-exports.add_user = (req, res) => {
-  if (!req.body) {
-    res.status(400).send({ message: "Content can not be empty" });
-    return;
-  }
-};
+exports.add_user = (req, res) => {};
 
 exports.update_user = (req, res) => {
   res.render("update_user");
