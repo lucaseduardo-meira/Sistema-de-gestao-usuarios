@@ -49,7 +49,7 @@ route.get("/add-user", services.add_user);
  * @method POST /add_userdb
  */
 
-route.post("/users/:user_id/add-user", GestorController.store);
+route.post("/add-user", GestorController.store);
 
 route.get("/update-user", services.update_user);
 
