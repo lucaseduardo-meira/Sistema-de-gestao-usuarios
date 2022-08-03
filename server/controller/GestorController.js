@@ -5,14 +5,16 @@ const session = require("express-session");
 module.exports = {
   async store(req, res) {
     const user = req.session.login;
+    console.log(user);
     const { name, email, gender, status } = req.body;
 
     const user_id = await User.findAll({
-      attributes: ["user_id"],
+      attributes: ["id"],
       where: {
         name: user,
       },
     });
+    console.log(user_id);
     if (!user_id) {
       return res.status(400).json({ error: "user not found" });
     }
