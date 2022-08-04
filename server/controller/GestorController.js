@@ -55,6 +55,5 @@ module.exports = {
       },
     });
     console.log(gestor);
-    res.redirect("/");
   },
 };
