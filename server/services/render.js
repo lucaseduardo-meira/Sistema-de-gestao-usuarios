@@ -3,8 +3,8 @@ const UserController = require("../controller/UserController");
 // Login e home page
 exports.home = (req, res) => {
   if (req.session.login) {
-    const user_id = UserController.user_id(req, res);
-    console.log("passsed");
+    const user_id = UserController.user_id;
+    console.log(user_id);
     res.redirect("/" + user_id);
   } else {
     res.render("login");
