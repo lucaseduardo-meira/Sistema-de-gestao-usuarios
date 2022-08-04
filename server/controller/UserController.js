@@ -24,7 +24,6 @@ module.exports = {
     if ((await find_user).length === 1) {
       //LOGAR USER
       req.session.login = name;
-      res.redirect("/");
     } else {
       return res.status(400).json({ error: "user not found" });
     }
@@ -47,9 +46,6 @@ module.exports = {
         },
       });
       req.session.login = name;
-      if (await req.session.login) {
-        res.redirect("/");
-      }
     }
   },
 };
