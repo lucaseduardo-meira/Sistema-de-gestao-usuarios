@@ -42,8 +42,13 @@ module.exports = {
       return console.log("Usuario já existe");
     } else {
       const user = await User.create({ name, password });
+      const find_user = await User.findAll({
+        where: {
+          name: name,
+          password: password,
+        },
+      });
       req.session.login = name;
-      console.log(session.login);
       res.redirect("/");
     }
   },
