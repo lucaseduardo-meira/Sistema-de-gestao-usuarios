@@ -15,6 +15,9 @@ exports.create_user = (req, res) => {
   }
 };
 
+// exports.find_user = (req,res) = {
+
+// }
 // Create user to database
 exports.add_user = (req, res) => {
   if (req.session.login) {

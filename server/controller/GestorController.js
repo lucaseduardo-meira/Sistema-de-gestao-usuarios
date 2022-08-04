@@ -42,7 +42,7 @@ module.exports = {
         name: login,
       },
     });
-    if (!id) {
+    if (!user) {
       return res.status(400).json({ error: "user not found" });
     }
 

@@ -5,6 +5,7 @@ const login = require("../controller/UserController");
 const services = require("../services/render");
 const UserController = require("../controller/UserController");
 const GestorController = require("../controller/GestorController");
+const Gestor = require("../model/Gestor");
 
 // /**
 //  * @description login page
