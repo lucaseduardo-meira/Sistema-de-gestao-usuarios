@@ -1,9 +1,11 @@
-const GestorController = require("../controller/GestorController");
+const UserController = require("../controller/UserController");
 
 // Login e home page
 exports.home = (req, res) => {
   if (req.session.login) {
-    res.render("index");
+    const user_id = UserController.user_id(req, res);
+    console.log("passsed");
+    res.redirect("/" + user_id);
   } else {
     res.render("login");
   }
