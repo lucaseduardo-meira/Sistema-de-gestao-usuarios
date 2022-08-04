@@ -5,26 +5,6 @@ const login = require("../controller/UserController");
 const services = require("../services/render");
 const UserController = require("../controller/UserController");
 const GestorController = require("../controller/GestorController");
-const Gestor = require("../model/Gestor");
-
-// /**
-//  * @description login page
-//  * @method GET /
-//  */
-
-// route.get("/login", services.login);
-
-// /**
-//  * @description login post
-//  * @method POST /login
-//  */
-
-// route.post("/login", UserController.login);
-
-// /**
-//  * @description create_user
-//  * @method GET /create_user
-//  */
 
 route.post("/", UserController.login);
 
