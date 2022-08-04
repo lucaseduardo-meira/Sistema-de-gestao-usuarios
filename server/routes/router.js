@@ -1,6 +1,4 @@
 const express = require("express");
-const app = express();
-app.use(express.json());
 const route = express.Router();
 
 const login = require("../controller/UserController");
@@ -11,7 +9,11 @@ const GestorController = require("../controller/GestorController");
 route.post("/login", UserController.login);
 route.get("/login", services.login);
 
-route.get("/", services.home);
+route.get("/", (req, res) => {
+  api = GestorController.find();
+  console.log(api);
+  res.status(200).json(api);
+});
 
 route.get("/create_user", services.create_user);
 

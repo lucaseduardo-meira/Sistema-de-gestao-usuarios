@@ -47,7 +47,9 @@ module.exports = {
         },
       });
       req.session.login = name;
-      res.redirect("/");
+      if (await req.session.login) {
+        res.redirect("/");
+      }
     }
   },
 };

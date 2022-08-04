@@ -31,6 +31,7 @@ module.exports = {
   },
 
   async find(req, res) {
+    console.log(req.session.login);
     const login = req.session.login;
     const { name, email, gender, status } = req.body;
 
@@ -48,12 +49,11 @@ module.exports = {
     const id = user[0].id;
 
     const gestor = await Gestor.findAll({
-      raw: true,
       where: {
         user_id: id,
       },
     });
 
-    res.render("index", { gestor });
+    return gestor;
   },
 };
