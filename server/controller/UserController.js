@@ -16,6 +16,8 @@ module.exports = {
       return console.log("usuario não existe");
     }
     const find_user = User.findAll({
+      raw: true,
+      attributes: ["id"],
       where: {
         name: name,
         password: password,
@@ -26,7 +28,7 @@ module.exports = {
       req.session.login = name;
       res.render("index");
     } else {
-      res.render("login");
+      return res.status(400).json({ error: "user not found" });
     }
   },
   async create(req, res) {

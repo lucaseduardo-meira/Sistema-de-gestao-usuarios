@@ -54,6 +54,6 @@ module.exports = {
         user_id: id,
       },
     });
-    return res.JSON(gestor);
+    console.log(gestor);
   },
 };
