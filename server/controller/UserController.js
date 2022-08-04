@@ -24,7 +24,7 @@ module.exports = {
     if ((await find_user).length === 1) {
       //LOGAR USER
       req.session.login = name;
-      res.render("index");
+      res.redirect("/");
     } else {
       return res.status(400).json({ error: "user not found" });
     }

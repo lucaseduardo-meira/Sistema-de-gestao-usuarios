@@ -1,5 +1,6 @@
 const express = require("express");
-express.use(express.json());
+const app = express();
+app.use(express.json());
 const route = express.Router();
 
 const login = require("../controller/UserController");
@@ -7,7 +8,8 @@ const services = require("../services/render");
 const UserController = require("../controller/UserController");
 const GestorController = require("../controller/GestorController");
 
-route.post("/", UserController.login);
+route.post("/login", UserController.login);
+route.get("/login", services.login);
 
 route.get("/", services.home);
 

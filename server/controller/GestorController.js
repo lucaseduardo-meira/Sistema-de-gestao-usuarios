@@ -53,6 +53,7 @@ module.exports = {
         user_id: id,
       },
     });
-    return gestor;
+
+    res.render("index", { gestor });
   },
 };
