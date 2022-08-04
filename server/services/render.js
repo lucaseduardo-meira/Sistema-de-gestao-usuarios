@@ -1,13 +1,9 @@
-const UserController = require("../controller/UserController");
-
 // Login e home page
 exports.home = (req, res) => {
   if (req.session.login) {
-    const user_id = UserController.user_id;
-    console.log(user_id);
-    res.redirect("/" + user_id);
+    res.render("index");
   } else {
-    res.render("login");
+    return res.render("login");
   }
 };
 

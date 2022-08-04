@@ -1,4 +1,5 @@
 const express = require("express");
+express.use(express.json());
 const route = express.Router();
 
 const login = require("../controller/UserController");

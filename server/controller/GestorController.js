@@ -27,7 +27,6 @@ module.exports = {
       status,
       user_id,
     });
-
     res.redirect("/");
   },
 
