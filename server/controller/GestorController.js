@@ -76,7 +76,6 @@ module.exports = {
     });
 
     const index = gestor.gestores;
-    console.log(index);
 
     return res.render("index", { index: index });
   },

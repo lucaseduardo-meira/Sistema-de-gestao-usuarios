@@ -1,15 +1,27 @@
-<tr>
-    <td>1</td>
-    <td>username</td>
-    <td>example@email.com</td>
-    <td>Male</td>
-    <td>Active</td>
-    <td>
-        <a href="/update-user" class="btn-uptade btn">
-            <span class="gradient"> <i class="fas fa-pencil alt"></i></span>
-        </a>
-        <a class="btn-delete btn">
-            <span class="gradient"><i class="fas fa-times"></i></span>
-        </a>
-    </td>
-</tr>
+<% for(var i=0;i<index.length; i++) { %>
+    <tr>
+        <td>
+            <%=i+1 %>
+        </td>
+        <td>
+            <%=index[i].name%>
+        </td>
+        <td>
+            <%=index[i].email%>
+        </td>
+        <td>
+            <%=index[i].gender%>
+        </td>
+        <td>
+            <%=index[i].status%>
+        </td>
+        <td>
+            <a href="/update-user" class="btn-uptade btn">
+                <span class="gradient"> <i class="fas fa-pencil alt"></i></span>
+            </a>
+            <a class="btn-delete btn">
+                <span class="gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+    </tr>
+    <% }%>
