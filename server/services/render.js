@@ -11,8 +11,8 @@ exports.login = (req, res) => {
 
 exports.home = (req, res) => {
   if (req.session.login) {
-    const index = GestorController.find(req, res);
-    console.log(index);
+    GestorController.find(req, res);
+    //res.send(index);
   } else {
     res.redirect("/login");
   }

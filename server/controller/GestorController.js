@@ -2,6 +2,7 @@ const User = require("../model/User");
 const Gestor = require("../model/Gestor");
 const session = require("express-session");
 const { login } = require("./UserController");
+const { json } = require("body-parser");
 
 module.exports = {
   async store(req, res) {
@@ -70,10 +71,13 @@ module.exports = {
 
     const user_id = id[0].id;
 
-    const index = await User.findByPk(user_id, {
+    const gestor = await User.findByPk(user_id, {
       include: { association: "gestores" },
     });
 
-    return res.json(index.gestores);
+    const index = gestor.gestores;
+    console.log(index);
+
+    return res.render("index", { index: index });
   },
 };
