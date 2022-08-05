@@ -2,6 +2,7 @@ const User = require("../model/User");
 const { login } = require("../services/render");
 const services = require("../services/render");
 const session = require("express-session");
+const GestorController = require("./GestorController");
 
 module.exports = {
   async login(req, res) {
@@ -24,10 +25,10 @@ module.exports = {
     if ((await find_user).length === 1) {
       //LOGAR USER
       req.session.login = name;
-      res.render("index");
     } else {
       return res.status(400).json({ error: "user not found" });
     }
+    res.redirect("/");
   },
   async create(req, res) {
     const { name, password } = req.body;

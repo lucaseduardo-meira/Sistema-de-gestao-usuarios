@@ -6,7 +6,9 @@ const services = require("../services/render");
 const UserController = require("../controller/UserController");
 const GestorController = require("../controller/GestorController");
 
-route.post("/", UserController.login);
+route.post("/login", UserController.login);
+route.get("/login", services.login);
+
 route.get("/", services.home);
 
 route.get("/create_user", services.create_user);
