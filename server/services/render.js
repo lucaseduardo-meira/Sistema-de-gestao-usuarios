@@ -1,20 +1,19 @@
 const GestorController = require("../controller/GestorController");
 
 // Login e home page
-exports.login = (req, res) => {
-  if (req.session.login) {
-    res.redirect("/");
-  } else {
-    res.render("login");
-  }
-};
+// exports.login = (req, res) => {
+//   if (req.session.login) {
+//     res.redirect("/");
+//   } else {
+//     res.render("login");
+//   }
+// };
 
 exports.home = (req, res) => {
   if (req.session.login) {
-    resultado = GestorController.find;
-    res.send(200).json(resultado);
+    res.render("index");
   } else {
-    res.redirect("/login");
+    res.render("login");
   }
 };
 

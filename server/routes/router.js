@@ -6,14 +6,8 @@ const services = require("../services/render");
 const UserController = require("../controller/UserController");
 const GestorController = require("../controller/GestorController");
 
-route.post("/login", UserController.login);
-route.get("/login", services.login);
-
-route.get("/", (req, res) => {
-  api = GestorController.find();
-  console.log(api);
-  res.status(200).json(api);
-});
+route.post("/", UserController.login);
+route.get("/", services.home);
 
 route.get("/create_user", services.create_user);
 
