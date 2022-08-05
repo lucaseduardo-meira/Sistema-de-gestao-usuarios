@@ -11,7 +11,9 @@ const GestorController = require("../controller/GestorController");
 
 exports.home = (req, res) => {
   if (req.session.login) {
-    res.render("index");
+    const index = GestorController.find();
+    console.log(index);
+    res.render("index", { index });
   } else {
     res.render("login");
   }
