@@ -56,8 +56,8 @@ module.exports = {
     return res.render("index", { index: index });
   },
 
-  async delete(req, res, user_id) {
+  async delete(req, res) {
     //const
-    return res.send(user_id);
+    return res.send("DELETE");
   },
 };

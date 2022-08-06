@@ -1,5 +1,6 @@
 const express = require("express");
 const route = express.Router();
+const jquery = require("jquery");
 
 const login = require("../controller/UserController");
 const services = require("../services/render");
@@ -34,5 +35,12 @@ route.get("/add-user", services.add_user);
 route.post("/add-user", GestorController.store);
 
 route.get("/update-user", services.update_user);
+
+//Delete user
+
+if (window.location.pathname == "/") {
+  $ondelete = $("table tbody td a.delete");
+  GestorController.delete();
+}
 
 module.exports = route;
