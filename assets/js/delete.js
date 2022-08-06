@@ -9,7 +9,7 @@ if (window.location.pathname == "/") {
     };
 
     if (confirm("Você deseja cancelar esse dado?")) {
-      $.ajax(request).done;
+      $.ajax(request).done(function (response) {});
     }
   });
 }

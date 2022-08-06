@@ -64,5 +64,6 @@ module.exports = {
     if (row) {
       await row.destroy();
     }
+    res.render('index')
   },
 };
