@@ -57,7 +57,12 @@ module.exports = {
   },
 
   async delete(req, res) {
-    //const
-    return res.send("DELETE");
+    const { id } = req.params;
+    const row = await Gestor.findOne({
+      where: { id },
+    });
+    if (row) {
+      await row.destroy();
+    }
   },
 };
