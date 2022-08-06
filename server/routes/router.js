@@ -35,10 +35,4 @@ route.post("/add-user", GestorController.store);
 
 route.get("/update-user", services.update_user);
 
-//Delete user
-// if (window.location.pathname == "/") {
-//   $ondelete = $("table tbody td a.delete");
-//   $ondelete.click(GestorController.delete);
-// }
-
 module.exports = route;
