@@ -64,6 +64,17 @@ module.exports = {
     if (row) {
       await row.destroy();
     }
-    res.render('index')
+    res.render("index");
+  },
+
+  async showupdate(req, res) {
+    const { id } = req.params;
+    const row = await Gestor.findOne({
+      raw: true,
+      where: { id },
+    });
+    if (row) {
+      res.render("update_user", { user: row });
+    }
   },
 };

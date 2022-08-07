@@ -1,3 +1,4 @@
+const { default: axios } = require("axios");
 const GestorController = require("../controller/GestorController");
 
 // Login e home page
@@ -36,5 +37,9 @@ exports.add_user = (req, res) => {
 };
 
 exports.update_user = (req, res) => {
-  res.render("update_user");
+  if (req.session.login) {
+    GestorController.showupdate(req, res);
+  } else {
+    res.redirect("/");
+  }
 };
