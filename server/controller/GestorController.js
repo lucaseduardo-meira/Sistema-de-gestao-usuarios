@@ -64,9 +64,6 @@ module.exports = {
     });
 
     res.redirect("/");
-    req.method = "GET";
-    // console.log("find");
-    // const destroy = await row.destroy();
   },
 
   async showupdate(req, res) {
