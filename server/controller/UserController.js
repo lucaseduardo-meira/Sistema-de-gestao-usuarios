@@ -16,12 +16,13 @@ module.exports = {
     if ((await find_name).length < 1) {
       return console.log("usuario não existe");
     }
-    const find_user = User.findAll({
+    const find_user = await User.findAll({
       where: {
         name: name,
         password: password,
       },
     });
+
     if ((await find_user).length === 1) {
       //LOGAR USER
       req.session.login = name;

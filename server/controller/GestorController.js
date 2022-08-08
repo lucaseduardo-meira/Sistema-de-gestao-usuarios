@@ -3,6 +3,7 @@ const Gestor = require("../model/Gestor");
 const session = require("express-session");
 const { login } = require("./UserController");
 const { json } = require("body-parser");
+const { destroy } = require("../model/User");
 
 module.exports = {
   async store(req, res) {
@@ -64,7 +65,7 @@ module.exports = {
     if (row) {
       await row.destroy();
     }
-    res.reload;
+    res.redirect("/");
   },
 
   async showupdate(req, res) {
