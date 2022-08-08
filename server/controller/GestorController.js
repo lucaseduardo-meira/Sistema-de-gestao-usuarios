@@ -62,6 +62,7 @@ module.exports = {
     const row = await Gestor.destroy({
       where: { id },
     });
+    res.sendStatus(200);
   },
 
   async showupdate(req, res) {
