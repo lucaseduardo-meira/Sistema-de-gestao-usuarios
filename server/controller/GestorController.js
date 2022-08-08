@@ -59,13 +59,14 @@ module.exports = {
 
   async delete(req, res) {
     const { id } = req.params;
-    const row = await Gestor.findOne({
+    const row = await Gestor.destroy({
       where: { id },
     });
-    if (row) {
-      await row.destroy();
-    }
+
     res.redirect("/");
+    req.method = "GET";
+    // console.log("find");
+    // const destroy = await row.destroy();
   },
 
   async showupdate(req, res) {
