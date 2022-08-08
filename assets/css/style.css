@@ -84,6 +84,7 @@ table {
   padding: 0.3em 1em;
   font: 1.1em;
   margin: 0.1em;
+  box-shadow: 0px 10px 40px -12px #331f6b;
 }
 
 .table tr:hover {

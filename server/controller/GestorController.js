@@ -64,7 +64,7 @@ module.exports = {
     if (row) {
       await row.destroy();
     }
-    res.render("index");
+    res.reload;
   },
 
   async showupdate(req, res) {
@@ -76,5 +76,36 @@ module.exports = {
     if (row) {
       res.render("update_user", { user: row });
     }
+  },
+
+  async update(req, res) {
+    const { id } = req.params;
+    const user = req.session.login;
+    const { name, email, gender, status } = req.body;
+
+    const u_id = await User.findAll({
+      raw: true,
+      attributes: ["id"],
+      where: {
+        name: user,
+      },
+    });
+    if (!u_id) {
+      return res.status(400).json({ error: "user not found" });
+    }
+
+    const user_id = u_id[0].id;
+    const update = await Gestor.update(
+      {
+        name,
+        email,
+        gender,
+        status,
+      },
+      {
+        where: { id: id },
+      }
+    );
+    res.redirect("/");
   },
 };

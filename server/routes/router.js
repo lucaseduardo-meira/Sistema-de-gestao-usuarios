@@ -35,6 +35,7 @@ route.get("/add-user", services.add_user);
 route.post("/add-user", GestorController.store);
 
 route.get("/update-user/:id", services.update_user);
+route.post("/update-user/:id", GestorController.update);
 
 route.delete("/:id", GestorController.delete);
 
