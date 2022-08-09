@@ -33,24 +33,3 @@ if (window.location.pathname == "/") {
     }
   });
 }
-
-// Validação de dados
-
-// const nameInput = document.querySelector("#name");
-// const passwordInput = document.querySelector("#password");
-// const submitButton = document.querySelector("#submit-btn");
-
-// const errorMessage = document.querySelector(".msg");
-
-// submitButton.addEventListener("click", (e) => {
-//   e.preventDefault();
-
-//   const nameValue = nameInput.value;
-//   const passwordValue = passwordInput.value;
-
-//   if (nameValue === "" || passwordValue === "") {
-//     errorMessage.innerHTML = `<i class=${"'fa-solid fa-triangle-exclamation'"}></i> Por favor preencha os campos`;
-//     errorMessage.classList = "error";
-//     return;
-//   }
-// });
