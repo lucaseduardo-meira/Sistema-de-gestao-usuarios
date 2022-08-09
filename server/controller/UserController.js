@@ -10,7 +10,8 @@ module.exports = {
     const { name, password } = req.body;
     // Validation
     if (!name || !password) {
-      res.render("login_erro");
+      res.render("login_erro", { erro: "Preencha os campos" });
+      return;
     } else {
       // Verify if name already exists
       const find_name = User.findAll({
@@ -19,7 +20,8 @@ module.exports = {
         },
       });
       if ((await find_name).length < 1) {
-        return console.log("usuario não existe");
+        res.render("login_erro", { erro: "Usuario não encontrado" });
+        return;
       }
       const find_user = await User.findAll({
         where: {
@@ -32,7 +34,8 @@ module.exports = {
         //LOGAR USER
         req.session.login = name;
       } else {
-        return res.status(400).json({ error: "user not found" });
+        res.render("login_erro", { erro: "Senha incorreta" });
+        return;
       }
       res.redirect("/");
     }
