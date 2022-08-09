@@ -8,29 +8,34 @@ const { NONE } = require("sequelize");
 module.exports = {
   async login(req, res) {
     const { name, password } = req.body;
-    // Verify if name already exists
-    const find_name = User.findAll({
-      where: {
-        name: name,
-      },
-    });
-    if ((await find_name).length < 1) {
-      return console.log("usuario não existe");
-    }
-    const find_user = await User.findAll({
-      where: {
-        name: name,
-        password: password,
-      },
-    });
-
-    if ((await find_user).length === 1) {
-      //LOGAR USER
-      req.session.login = name;
+    // Validation
+    if (!name || !password) {
+      res.render("login_erro");
     } else {
-      return res.status(400).json({ error: "user not found" });
+      // Verify if name already exists
+      const find_name = User.findAll({
+        where: {
+          name: name,
+        },
+      });
+      if ((await find_name).length < 1) {
+        return console.log("usuario não existe");
+      }
+      const find_user = await User.findAll({
+        where: {
+          name: name,
+          password: password,
+        },
+      });
+
+      if ((await find_user).length === 1) {
+        //LOGAR USER
+        req.session.login = name;
+      } else {
+        return res.status(400).json({ error: "user not found" });
+      }
+      res.redirect("/");
     }
-    res.redirect("/");
   },
   async create(req, res) {
     const { name, password } = req.body;

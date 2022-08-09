@@ -22,15 +22,17 @@
             <div class="right-login">
                 <div class="card-login">
                     <h1>LOGIN</h1>
+                    <div class="error"><i class="fa-solid fa-triangle-exclamation"></i> Por favor preencha os campos
+                    </div>
                     <div class="textfield">
                         <label for="name">Usuário</label>
-                        <input type="text" name="name" placeholder="Usuário">
+                        <input type="text" name="name" placeholder="Usuário" id="name">
                     </div>
                     <div class="textfield">
                         <label for="password">Senha</label>
-                        <input type="password" name="password" placeholder="Senha">
+                        <input type="password" name="password" placeholder="Senha" id="password">
                     </div>
-                    <button type="submit" class="btn-login">Login</button>
+                    <button type="submit" class="btn-login" id="submit-btn">Login</button>
                     <a href="/create_user" class="create-user">Registre-se <i class="fas fa-angle-double-right"></i></a>
                 </div>
             </div>
@@ -38,4 +40,8 @@
 
     </div>
 
+
+    <script>
+        document.getElementById
+    </script>
     <%- include('include/_footer')%>
