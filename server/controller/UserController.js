@@ -3,6 +3,7 @@ const { login } = require("../services/render");
 const services = require("../services/render");
 const session = require("express-session");
 const GestorController = require("./GestorController");
+const { NONE } = require("sequelize");
 
 module.exports = {
   async login(req, res) {
@@ -50,5 +51,9 @@ module.exports = {
       });
       req.session.login = name;
     }
+  },
+  async logout(req, res) {
+    req.session.login = null;
+    res.sendStatus(200);
   },
 };

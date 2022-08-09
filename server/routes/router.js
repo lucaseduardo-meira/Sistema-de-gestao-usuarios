@@ -39,4 +39,6 @@ route.post("/update-user/:id", GestorController.update);
 
 route.delete("/:id", GestorController.delete);
 
+route.post("/logout", UserController.logout);
+
 module.exports = route;

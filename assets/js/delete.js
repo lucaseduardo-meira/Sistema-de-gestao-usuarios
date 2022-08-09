@@ -24,10 +24,12 @@ if (window.location.pathname == "/") {
   $onlogout.click(function () {
     var request = {
       url: "http://localhost:3000/logout",
-      method: "DELETE",
+      method: "POST",
     };
     if (confirm("Deseja deslogar da pagina?")) {
-      $.ajax(request).done();
+      $.ajax(request).done(function (response) {
+        location.reload();
+      });
     }
   });
 }
