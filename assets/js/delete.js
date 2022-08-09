@@ -16,3 +16,18 @@ if (window.location.pathname == "/") {
     }
   });
 }
+
+// Logout
+
+if (window.location.pathname == "/") {
+  $onlogout = $("#logout");
+  $onlogout.click(function () {
+    var request = {
+      url: "http://localhost:3000/logout",
+      method: "DELETE",
+    };
+    if (confirm("Deseja deslogar da pagina?")) {
+      $.ajax(request).done();
+    }
+  });
+}
