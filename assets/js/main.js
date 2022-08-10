@@ -10,7 +10,7 @@ if (window.location.pathname == "/") {
 
     if (confirm("Você deseja cancelar esse dado?")) {
       $.ajax(request).done(function (response) {
-        alert("Deleted");
+        alert("Deletado");
         location.reload();
       });
     }
