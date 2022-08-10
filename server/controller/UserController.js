@@ -3,7 +3,7 @@ const { login } = require("../services/render");
 const services = require("../services/render");
 const session = require("express-session");
 const GestorController = require("./GestorController");
-const { NONE } = require("sequelize");
+const bcrypt = require("bcrypt");
 
 module.exports = {
   async login(req, res) {
@@ -30,7 +30,7 @@ module.exports = {
         },
       });
 
-      if ((await find_user).length === 1) {
+      if (find_user.length === 1) {
         //LOGAR USER
         req.session.login = name;
       } else {
@@ -41,15 +41,19 @@ module.exports = {
     }
   },
   async create(req, res) {
-    const { name, password } = req.body;
+    const { name } = req.body;
+    var { password } = req.body;
     const find_name = User.findAll({
       where: {
         name: name,
       },
     });
-    if ((await find_name).length > 0) {
-      return console.log("Usuario já existe");
+    if ((await find_name).length === 1) {
+      res.render("login_erro", { erro: "Usuario já existe" });
+      return;
     } else {
+      const hash = await bcrypt.hash(password, 10);
+      password = hash;
       const user = await User.create({ name, password });
       const find_user = await User.findAll({
         where: {
@@ -58,6 +62,7 @@ module.exports = {
         },
       });
       req.session.login = name;
+      res.redirect("/");
     }
   },
   async logout(req, res) {
