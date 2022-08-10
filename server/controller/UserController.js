@@ -24,19 +24,18 @@ module.exports = {
         return;
       }
       const find_user = await User.findAll({
+        raw: true,
+        attributes: ["password"],
         where: {
           name: name,
-          password: password,
         },
       });
+      const hash_password = find_user[0].password;
 
-      if (find_user.length === 1) {
-        //LOGAR USER
-        req.session.login = name;
-      } else {
-        res.render("login_erro", { erro: "Senha incorreta" });
-        return;
+      if (!(await bcrypt.compare(password, hash_password))) {
+        return res.render("login_erro", { erro: "Senha incorreta" });
       }
+      req.session.login = name;
       res.redirect("/");
     }
   },
