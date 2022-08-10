@@ -1,8 +1,5 @@
 const User = require("../model/User");
-const { login } = require("../services/render");
-const services = require("../services/render");
 const session = require("express-session");
-const GestorController = require("./GestorController");
 const bcrypt = require("bcrypt");
 
 module.exports = {
