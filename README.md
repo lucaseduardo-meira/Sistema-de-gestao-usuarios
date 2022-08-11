@@ -1,5 +1,4 @@
-# Sistema de gestão de usuarios
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/neliocursos/exemplo-readme/blob/main/LICENSE) 
+# Sistema de gestão de usuarios   [![NPM](https://img.shields.io/npm/l/react)](https://github.com/neliocursos/exemplo-readme/blob/main/LICENSE) 
 
 # Sobre o projeto
 
@@ -10,11 +9,11 @@ A aplicação consiste em uma interface que permite ao gestor logado adicionar, 
 
 
 # Layout
-##Login
+## Login
 <img src='./assets/img/Login page.png'>
-##Home page
+## Home page
 <img src='./assets/img/Homepage.png'>
-##Criar usuario
+## Criar usuario
 <img src='./assets/img/Criaruser.png'>
 
 # Tecnologias utilizadas
