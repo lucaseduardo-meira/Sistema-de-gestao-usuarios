@@ -1,19 +1,26 @@
-# Sistema de gestão de usuarios   [![NPM](https://img.shields.io/npm/l/react)](https://github.com/neliocursos/exemplo-readme/blob/main/LICENSE) 
+# Sistema de gestão de usuarios   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 
 # Sobre o projeto
 
 
-O sistema de gestão de usuarios é uma aplicação CRUD construída em NodeJS, express, sequelize e Front-end basico 
+O sistema de gestão de usuarios é uma aplicação CRUD construída em NodeJS, Express, Sequelize e Front-end basico 
 
 A aplicação consiste em uma interface que permite ao gestor logado adicionar, editar e remover os usuarios que ele deseja, cada gestor possui seus propios usuarios
 
 
 # Layout
-## Login
+##  Login   
+
 <img src='./assets/img/Login page.png'>
-## Home page
+
+##  Home page   
+
 <img src='./assets/img/Homepage.png'>
-## Criar usuario
+
+##  Criar usuario   
+
 <img src='./assets/img/Criaruser.png'>
 
 # Tecnologias utilizadas
