@@ -3,7 +3,6 @@
 
 # Sobre o projeto
 
-https://wmazoni-sds1.netlify.app
 
 O sistema de gestão de usuarios é uma aplicação CRUD construída em NodeJS, express, sequelize e Front-end basico 
 
