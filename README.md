@@ -9,11 +9,11 @@ A aplicação consiste em uma interface que permite ao gestor logado adicionar, 
 
 
 # Layout
-##Login
+Login
 <img src='./assets/img/Login page.png'>
-##Home page
+Home page
 <img src='./assets/img/Homepage.png'>
-##Criar usuario
+Criar usuario
 <img src='./assets/img/Criaruser.png'>
 
 # Tecnologias utilizadas
