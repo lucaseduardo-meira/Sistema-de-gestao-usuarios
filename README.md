@@ -48,7 +48,7 @@ yarn install
 yarn start
 
 # Projeto estará rodando na port:3000
-
+http://localhost:3000/
 ```
 
 # Autor
