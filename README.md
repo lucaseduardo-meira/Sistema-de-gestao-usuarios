@@ -9,13 +9,13 @@ O sistema de gestão de usuarios é uma aplicação CRUD construída em NodeJS, 
 A aplicação consiste em uma interface que permite ao gestor logado adicionar, editar e remover os usuarios que ele deseja, cada gestor possui seus propios usuarios
 
 
-## Layout
-![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
-
-![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
-
-## Modelo conceitual
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+# Layout
+##Login
+<img src='./assets/img/Login page.png'>
+##Home page
+<img src='./assets/img/Homepage.png'>
+##Criar usuario
+<img src='./assets/img/Criaruser.png'>
 
 # Tecnologias utilizadas
 ## Back end
