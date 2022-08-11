@@ -10,7 +10,7 @@ A aplicação consiste em uma interface que permite ao gestor logado adicionar, 
 
 
 ## Layout
-![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
+<img src='./assets/img/Login page.png'>
 
 ![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
 
