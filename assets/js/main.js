@@ -1,3 +1,5 @@
+// Delete user
+
 if (window.location.pathname == "/") {
   $ondelete = $(".table tbody td a.btn-delete");
   $ondelete.click(function () {
