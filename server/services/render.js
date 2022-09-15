@@ -1,4 +1,3 @@
-const { default: axios } = require("axios");
 const GestorController = require("../controller/GestorController");
 
 // Login e home page
