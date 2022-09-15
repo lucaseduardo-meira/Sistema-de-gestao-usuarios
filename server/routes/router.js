@@ -1,8 +1,6 @@
 const express = require("express");
 const route = express.Router();
-const jquery = require("jquery");
 
-const login = require("../controller/UserController");
 const services = require("../services/render");
 const UserController = require("../controller/UserController");
 const GestorController = require("../controller/GestorController");
