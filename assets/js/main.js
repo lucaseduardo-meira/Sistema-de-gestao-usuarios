@@ -35,3 +35,29 @@ if (window.location.pathname == "/") {
     }
   });
 }
+
+// Validation form
+function validate() {
+  var valid_gender = false;
+  var gender_input = document.myform.gender;
+
+  for (var i = 0; i < gender_input.length; i++) {
+    if (gender_input[i].checked) {
+      valid_gender = true;
+      var valid_status = false;
+      var status_input = document.myform.status;
+
+      for (var j = 0; j < status_input.length; j++) {
+        if (status_input[j].checked) {
+          valid_status = true;
+          break;
+        }
+      }
+    }
+  }
+  if (!valid_gender || !valid_status) {
+    console.log("MISSING");
+    alert("Selecione todos os campos");
+    return false;
+  }
+}
