@@ -18,6 +18,7 @@ exports.home = (req, res) => {
   }
 };
 
+// Create user to users database
 exports.create_user = (req, res) => {
   if (req.session.login) {
     res.redirect("/");
@@ -26,7 +27,7 @@ exports.create_user = (req, res) => {
   }
 };
 
-// Create user to database
+// Create user to gestors database
 exports.add_user = (req, res) => {
   if (req.session.login) {
     res.render("add_user");
@@ -35,7 +36,7 @@ exports.add_user = (req, res) => {
   }
 };
 
-//
+// Update user
 exports.update_user = (req, res) => {
   if (req.session.login) {
     GestorController.showupdate(req, res);
