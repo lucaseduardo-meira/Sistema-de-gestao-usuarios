@@ -13,7 +13,6 @@ exports.login = (req, res) => {
 exports.home = (req, res) => {
   if (req.session.login) {
     GestorController.find(req, res);
-    //res.send(index);
   } else {
     res.redirect("/login");
   }
@@ -36,6 +35,7 @@ exports.add_user = (req, res) => {
   }
 };
 
+//
 exports.update_user = (req, res) => {
   if (req.session.login) {
     GestorController.showupdate(req, res);
