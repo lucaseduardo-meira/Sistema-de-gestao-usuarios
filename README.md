@@ -40,11 +40,21 @@ A aplicação consiste em uma interface que permite ao gestor logado adicionar, 
 Pré-requisitos: npm / yarn
 
 ```bash
-# clonar repositório
-git clone https://github.com/lucaseduardo-meira/crudproject
+
+# Retornar ao diretório inicial
+cd
+
+# Criar diretório do projeto
+mkdir crudproject
+
+# Ir para o diretório do projeto
+cd crudproject
 
 # entrar na pasta do projeto
 cd crudproject
+
+# clonar repositório
+git clone https://github.com/lucaseduardo-meira/crudproject
 
 # instalar dependências
 yarn install
