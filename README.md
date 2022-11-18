@@ -41,7 +41,7 @@ Pré-requisitos: npm / yarn
 
 ```bash
 # clonar repositório
-git clone https://https://github.com/lucaseduardo-meira/crudproject
+git clone https://github.com/lucaseduardo-meira/crudproject
 
 # entrar na pasta do projeto
 cd crudproject
