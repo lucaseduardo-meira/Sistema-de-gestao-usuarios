@@ -54,7 +54,7 @@ cd crud
 git clone https://github.com/lucaseduardo-meira/Sistema-de-gestao-usuarios
 
 # Entrar na pasta
-cd crudproject
+cd Sistema-de-gestao-usuarios/
 
 # instalar dependências
 yarn install / npm install
