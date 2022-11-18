@@ -45,22 +45,22 @@ Pré-requisitos: npm / yarn
 cd
 
 # Criar diretório do projeto
-mkdir crudproject
+mkdir crud
 
 # Ir para o diretório do projeto
-cd crudproject
-
-# entrar na pasta do projeto
-cd crudproject
+cd crud
 
 # clonar repositório
-git clone https://github.com/lucaseduardo-meira/crudproject
+git clone https://github.com/lucaseduardo-meira/Sistema-de-gestao-usuarios
+
+# Entrar na pasta
+cd crudproject
 
 # instalar dependências
-yarn install
+yarn install / npm install
 
 # executar o projeto
-yarn start
+yarn start / npm start
 
 # Projeto estará rodando na port:3000
 http://localhost:3000/
