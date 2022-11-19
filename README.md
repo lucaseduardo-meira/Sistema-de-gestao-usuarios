@@ -1,39 +1,39 @@
-# Sistema de gestão de usuarios   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-
+# Sistema de gestão de usuarios [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Sobre o projeto
 
-
-O sistema de gestão de usuarios é uma aplicação CRUD construída em NodeJS, Express, Sequelize e Front-end basico 
+O sistema de gestão de usuarios é uma aplicação CRUD construída em NodeJS, Express, Sequelize e Front-end basico
 
 A aplicação consiste em uma interface que permite ao gestor logado adicionar, editar e remover os usuarios que ele deseja, cada gestor possui seus propios usuarios
 
-
 # Layout
-##  Login   
+
+## Login
 
 <img src='./assets/img/Login page.png'>
 
-##  Home page   
+## Home page
 
 <img src='./assets/img/Homepage.png'>
 
-##  Criar usuario   
+## Criar usuario
 
 <img src='./assets/img/Criaruser.png'>
 
 # Tecnologias utilizadas
+
 ## Back end
+
 - NodeJS
 - Express
 - Express-session
 - Sequelize
 - SQL
-## Front end
-- HTML / CSS / JS 
-- EJS
 
+## Front end
+
+- HTML / CSS / JS
+- EJS
 
 # Como executar o projeto
 
@@ -58,6 +58,13 @@ cd Sistema-de-gestao-usuarios/
 
 # instalar dependências
 yarn install / npm install
+
+# Alterar credenciais
+Altere as credencias dentro de /src/server/config/database.js
+
+# Sequelize
+Rode yarn sequelize db:create para criar o banco de dados
+Rode yarn sequelize db:migrate para executar as migrations
 
 # executar o projeto
 yarn start / npm start
