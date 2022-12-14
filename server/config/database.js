@@ -1,9 +1,9 @@
 module.exports = {
-  dialect: "postgres",
-  host: "postgres://mogivryy:OUfqBGxrUh_JypPKp8K_27ijK6V24ycY@motty.db.elephantsql.com/mogivryy",
-  username: "mogivryy",
-  password: "OUfqBGxrUh_JypPKp8K_27ijK6V24ycY",
-  database: "crudproject",
+  dialect: "mysql",
+  host: process.env.HOST,
+  username: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
   port: 3306,
   define: {
     timestamps: true,
