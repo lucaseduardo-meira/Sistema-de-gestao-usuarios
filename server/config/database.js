@@ -1,9 +1,9 @@
 module.exports = {
-  dialect: "mysql",
-  host: "sql101.epizy.com",
-  username: "epiz_33195929",
-  password: "ijLl2NwtNyo",
-  database: "epiz_33195929_sistema_de_gestao",
+  dialect: "postgres",
+  host: "postgres://mogivryy:OUfqBGxrUh_JypPKp8K_27ijK6V24ycY@motty.db.elephantsql.com/mogivryy",
+  username: "mogivryy",
+  password: "OUfqBGxrUh_JypPKp8K_27ijK6V24ycY",
+  database: "crudproject",
   port: 3306,
   define: {
     timestamps: true,
