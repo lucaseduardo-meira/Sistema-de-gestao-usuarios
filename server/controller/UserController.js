@@ -1,4 +1,4 @@
-const User = require("../model/User");
+const Gestor = require("../model/Gestor");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
 
@@ -11,7 +11,7 @@ module.exports = {
       return;
     } else {
       // Verify if name already exists
-      const find_name = User.findAll({
+      const find_name = Gestor.findAll({
         where: {
           name: name,
         },
@@ -20,7 +20,7 @@ module.exports = {
         res.render("login_erro", { erro: "Usuario não encontrado" });
         return;
       }
-      const find_user = await User.findAll({
+      const find_user = await Gestor.findAll({
         raw: true,
         attributes: ["password"],
         where: {
@@ -39,7 +39,7 @@ module.exports = {
   async create(req, res) {
     const { name } = req.body;
     var { password } = req.body;
-    const find_name = User.findAll({
+    const find_name = Gestor.findAll({
       where: {
         name: name,
       },
@@ -50,8 +50,8 @@ module.exports = {
     } else {
       const hash = await bcrypt.hash(password, 10);
       password = hash;
-      const user = await User.create({ name, password });
-      const find_user = await User.findAll({
+      const gestor = await Gestor.create({ name, password });
+      const find_gestor = await Gestor.findAll({
         where: {
           name: name,
           password: password,
