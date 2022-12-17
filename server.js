@@ -1,5 +1,5 @@
+require("dotenv").config();
 const express = require("express");
-const dotenv = require("dotenv");
 const morgan = require("morgan");
 const path = require("path");
 const session = require("express-session");
@@ -10,7 +10,6 @@ require("./server/database");
 const app = express();
 
 // Path config
-dotenv.config({ path: "config.env" });
 const PORT = process.env.PORT || 8080;
 
 // log request
