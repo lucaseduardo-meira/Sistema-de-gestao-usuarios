@@ -5,10 +5,7 @@ class Gestor extends Model {
     super.init(
       {
         name: DataTypes.STRING,
-        email: DataTypes.STRING,
-        gender: DataTypes.STRING,
-        status: DataTypes.STRING,
-        user_id: DataTypes.INTEGER,
+        password: DataTypes.STRING,
       },
       {
         sequelize,
@@ -17,7 +14,7 @@ class Gestor extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.User, { foreignKey: "user_id", as: "manager" });
+    this.hasMany(models.User, { foreignKey: "user_id", as: "gestors" });
   }
 }
 
