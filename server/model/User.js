@@ -5,7 +5,10 @@ class User extends Model {
     super.init(
       {
         name: DataTypes.STRING,
-        password: DataTypes.STRING,
+        email: DataTypes.STRING,
+        gender: DataTypes.STRING,
+        status: DataTypes.STRING,
+        user_id: DataTypes.INTEGER,
       },
       {
         sequelize,
@@ -14,7 +17,7 @@ class User extends Model {
   }
 
   static associate(models) {
-    this.hasMany(models.Gestor, { foreignKey: "user_id", as: "gestores" });
+    this.belongsTo(models.Gestor, { foreignKey: "user_id", as: "manager" });
   }
 }
 
