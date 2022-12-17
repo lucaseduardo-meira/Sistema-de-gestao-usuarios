@@ -1,16 +1,16 @@
-const User = require("../model/User");
 const Gestor = require("../model/Gestor");
+const User = require("../model/User");
 const session = require("express-session");
 const { login } = require("./UserController");
 const { json } = require("body-parser");
-const { destroy } = require("../model/User");
+const { destroy } = require("../model/Gestor");
 
 module.exports = {
   async store(req, res) {
     const user = req.session.login;
     const { name, email, gender, status } = req.body;
 
-    const id = await User.findAll({
+    const id = await Gestor.findAll({
       raw: true,
       attributes: ["id"],
       where: {
@@ -23,7 +23,7 @@ module.exports = {
 
     const user_id = id[0].id;
 
-    const gestor = await Gestor.create({
+    const usuario = await User.create({
       name,
       email,
       gender,
@@ -35,7 +35,7 @@ module.exports = {
 
   async find(req, res) {
     const login = req.session.login;
-    const id = await User.findAll({
+    const id = await Gestor.findAll({
       raw: true,
       attributes: ["id"],
       where: {
@@ -48,18 +48,18 @@ module.exports = {
 
     const user_id = id[0].id;
 
-    const gestor = await User.findByPk(user_id, {
-      include: { association: "gestores" },
+    const gestor = await Gestor.findByPk(user_id, {
+      include: { association: "gestors" },
     });
 
-    const index = gestor.gestores;
+    const index = gestor.gestors;
 
     return res.render("index", { index: index });
   },
 
   async delete(req, res) {
     const { id } = req.params;
-    const row = await Gestor.destroy({
+    const row = await User.destroy({
       where: { id },
     });
     res.sendStatus(200);
@@ -67,7 +67,7 @@ module.exports = {
 
   async showupdate(req, res) {
     const { id } = req.params;
-    const row = await Gestor.findOne({
+    const row = await User.findOne({
       raw: true,
       where: { id },
     });
@@ -81,7 +81,7 @@ module.exports = {
     const user = req.session.login;
     const { name, email, gender, status } = req.body;
 
-    const u_id = await User.findAll({
+    const u_id = await Gestor.findAll({
       raw: true,
       attributes: ["id"],
       where: {
@@ -93,7 +93,7 @@ module.exports = {
     }
 
     const user_id = u_id[0].id;
-    const update = await Gestor.update(
+    const update = await User.update(
       {
         name,
         email,
